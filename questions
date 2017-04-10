@@ -1,0 +1,11 @@
+
+list_to_llists([], _, _).
+list_to_llists(_, _, [[]]).
+
+list_to_llists([H|T],W,[A|B]):-
+
+%length(A,W), %length of A must be equal to W
+memberHelper(H,[A|B]),% H must be either a member of A or (rest of the map)
+list_to_llists(T,W,B).  %checking  on every other member of the List L In LLists
+
+
